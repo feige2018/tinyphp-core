@@ -56,6 +56,12 @@ function user_exception($message, $code = "0", $data = [], $file = "")
     throw new UserException($message, $code, $data, $file);
 }
 
+/**
+ * @param string $key
+ * @param mixed $default
+ * @return mixed|null
+ * 如：config("database.connections.mysql.prefix", "")
+ */
 function config($key = null, $default = null)
 {
     static $config;
