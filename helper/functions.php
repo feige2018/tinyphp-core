@@ -78,7 +78,7 @@ function config($key = null, $default = null)
 }
 
 /**
- * 递归获取key值
+ * 递归获取key值，如：array_get($config, "database.connections.mysql.prefix")
  * @param array $array N 维数组
  * @param string $key 以.分隔
  * @return mixed|null
@@ -88,7 +88,7 @@ function array_get($array, $key)
     $list = explode('.', $key);
     $first = array_shift($list);
     $result = isset($array[$first]) ? $array[$first] : null;
-    if (!empty($result) && is_array($result)) {
+    if (!empty($result) && is_array($result) && count($list) > 0) {
         return array_get($result, join('.', $list));
     }
     return $result;
