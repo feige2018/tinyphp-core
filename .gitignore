@@ -1,0 +1,14 @@
+.env
+.rnd
+.swp
+*.log
+.user.ini
+/.idea
+/.vscode
+/.constant
+/.phpstorm.meta.php
+/.phpunit.result.cache
+/config/config.php
+/public/.user.ini
+/composer.lock
+/vendor
