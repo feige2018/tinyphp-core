@@ -128,7 +128,7 @@ function filter_err(\Throwable $e, $isTrace = false)
     $errInfo["uri"] = Request::instance()->uri();
     if ($isTrace) {
         $getTrace = $e->getTrace();
-        $getTrace = array_splice($getTrace, 0, 5);
+        $getTrace = array_splice($getTrace, 0, 3);
         foreach ($getTrace as $i => $trace) {
             if (isset($trace["file"])) {
                 $trace["file"] = str_replace($root, "", $trace["file"]);
